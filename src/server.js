@@ -8,7 +8,7 @@ const personalHelpers = require("./utils/helpers");
 const Todo = require("./models/Todos");
 
 //routes
-const todoRoute = require('./routes/todo');
+const todoRoute = require("./routes/todo");
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.engine(
   handleBars.engine({
     extname: "hbs",
     defaultLayout: "main",
-    helpers: personalHelpers
+    helpers: personalHelpers,
   })
 );
 
@@ -34,18 +34,21 @@ app.use(
 );
 
 app.set("view engine", "hbs");
-app.set('views', __dirname + '/views/');
-app.use('/todo', todoRoute);
+app.set("views", __dirname + "/views/");
+app.use("/todo", todoRoute);
 
 app.get("/", (req, res) => {
   let messages = req.session.messages;
   req.session.messages = false;
 
   Todo.findAll().then((values) => {
-    if (values.length > 0){
-      return res.render('index', {messages: messages, todoData: values.map(values => values.toJSON())});
+    if (values.length > 0) {
+      return res.render("index", {
+        messages: messages,
+        todoData: values.map((values) => values.toJSON()),
+      });
     }
-      return res.render("index", { messages: messages});
+    return res.render("index", { messages: messages });
   });
 });
 

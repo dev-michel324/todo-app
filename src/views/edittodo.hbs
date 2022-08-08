@@ -1,14 +1,39 @@
-<a href="/"><input type="submit" class="btn btn-outline-secondary mt-3" value="Voltar"></a>
+<a href="/"><input
+    type="submit"
+    class="btn btn-outline-secondary mt-3"
+    value="Voltar"
+  /></a>
 
-<form action="/todo/edit" method="post" class="position-fixed top-50 start-50 translate-middle" id="addtodo">
-    <input type="text" name="id" value="{{id}}" hidden>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Titulo</label>
-        <input type="text" class="form-control" name="title" id="title" placeholder="Fazer café" value="{{title}}" required>
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-        <textarea class="form-control" name="description" id="description" rows="3">{{description}}</textarea>
-    </div>
-    <input type="submit" class="btn btn-outline-success" value="Salvar">
+<form
+  action="/todo/edit"
+  method="post"
+  class="position-fixed top-50 start-50 translate-middle"
+  id="addtodo"
+>
+  <input type="text" name="id" value="{{id}}" hidden />
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+    <input
+      type="text"
+      class="form-control"
+      name="title"
+      id="title"
+      placeholder="Fazer café"
+      value="{{title}}"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label
+      for="exampleFormControlTextarea1"
+      class="form-label"
+    >Descrição</label>
+    <textarea
+      class="form-control"
+      name="description"
+      id="description"
+      rows="3"
+    >{{description}}</textarea>
+  </div>
+  <input type="submit" class="btn btn-outline-success" value="Salvar" />
 </form>
