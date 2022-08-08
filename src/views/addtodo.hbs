@@ -1,0 +1,15 @@
+{{>msg}}
+
+<a href="/"><input type="submit" class="btn btn-outline-secondary mt-3" value="Voltar"></a>
+
+<form action="/todo/addtodo" method="post" class="position-fixed top-50 start-50 translate-middle" id="addtodo">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="Fazer café" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+    </div>
+    <input type="submit" class="btn btn-outline-success" value="Adicionar">
+</form>
